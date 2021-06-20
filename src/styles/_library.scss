@@ -1,11 +1,15 @@
 .library {
   position: fixed;
   top: 0;
+  background: white;
   left: 0;
   height: 100%;
   width: 20rem;
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  opacity: 0;
   h2 {
     padding: 2rem;
   }
@@ -55,4 +59,9 @@
 
 .selected {
   background-color: rgb(184, 239, 255);
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
 }
