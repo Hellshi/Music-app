@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./styles/app.scss";
 import Player from "./components/Player";
 import Song from "./components/Song";
-import data from "./util";
+import data from "./data";
 import Nav from "./components/Nav";
 import Library from "./components/Library";
 
@@ -38,7 +38,10 @@ function App() {
         setIsPlaying={setIsPlaying}
         setSongInfo={setSongInfo}
         songInfo={songInfo}
+        setCurrentSong={setCurrentSong}
         currentSong={currentSong}
+        songs={songs}
+        setSongs={setSongs}
       ></Player>
       <Library
         libraryStatus={libraryStatus}
