@@ -8,12 +8,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
-  //State player
-  const [playerButton, setPlayerButton] = useState(faPlay);
   //Time info
   const [songInfo, setSongInfo] = useState({
-    currentTime: null,
-    duration: null,
+    currentTime: 0,
+    duration: 0,
   });
   //Ref
   const audioRef = useRef(null);
@@ -23,11 +21,9 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(!isPlaying);
-      setPlayerButton(faPlay);
     } else {
       audioRef.current.play();
       setIsPlaying(!isPlaying);
-      setPlayerButton(faPause);
     }
   };
 
@@ -70,7 +66,7 @@ const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
           className="icon"
           onClick={handlePlay}
           size="2x"
-          icon={playerButton}
+          icon={isPlaying ? faPause : faPlay}
         />
         <FontAwesomeIcon
           className="skip-forward"
